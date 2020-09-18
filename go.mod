@@ -1,4 +1,4 @@
-module github.com/simonswine/covid-prometheus
+module github.com/simonswine/covid-thanos-store
 
 go 1.14
 
@@ -9,10 +9,7 @@ require (
 	github.com/prometheus/common v0.10.0
 	github.com/prometheus/prometheus v1.8.2-0.20200805170718-983ebb4a5133
 	github.com/thanos-io/thanos v0.14.0
-	k8s.io/api v0.18.8
-	k8s.io/apimachinery v0.18.8
-	k8s.io/client-go v12.0.0+incompatible
-	k8s.io/klog v1.0.0
+	github.com/urfave/cli v1.22.1
 )
 
 replace k8s.io/client-go => k8s.io/client-go v0.18.8
