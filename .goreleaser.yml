@@ -12,6 +12,9 @@ dockers:
     goos: linux
     goarch: amd64
     dockerfile: Dockerfile
+    build_flag_templates:
+      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+      - "--label=org.opencontainers.image.version={{.Version}}"
 checksum:
   name_template: sha256sums.txt
 snapshot:

@@ -20,6 +20,11 @@ jobs:
         with:
           go-version: 1.15
       -
+        name: Setup docker secret
+        run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
+        env:
+          DOCKER_AUTH_CONFIG: ${{ secrets.DOCKER_AUTH_CONFIG }}
+      -
         name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
