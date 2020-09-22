@@ -545,7 +545,7 @@ func (s *covidStore) process(loadData func() (io.ReadCloser, *metadata, error)) 
 	mint := h.MinTime()
 	maxt := h.MaxTime() + 1
 
-	_ = level.Info(s.logger).Log("msg", "flushing", "series_count", seriesCount, "mint", timestamp.Time(mint), "maxt", timestamp.Time(maxt), "dir", dir)
+	_ = level.Info(s.logger).Log("msg", "flushing block", "series_count", seriesCount, "mint", timestamp.Time(mint), "maxt", timestamp.Time(maxt), "dir", dir)
 
 	// Flush head to disk as a block.
 	compactor, err := tsdb.NewLeveledCompactor(
