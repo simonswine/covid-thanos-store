@@ -255,7 +255,7 @@ func addElementToSeries(series map[string]*prompb.TimeSeries, e *csvEntry) error
 
 		if len(values.Samples) == 0 {
 			values.Samples = append(values.Samples, sample)
-			return nil
+			continue
 		}
 
 		index := 0
@@ -268,7 +268,7 @@ func addElementToSeries(series map[string]*prompb.TimeSeries, e *csvEntry) error
 
 		if len(values.Samples) == index {
 			values.Samples = append(values.Samples, sample)
-			return nil
+			continue
 		}
 
 		values.Samples = append(values.Samples[:index+1], values.Samples[index:]...)
